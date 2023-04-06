@@ -1,45 +1,349 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20230405 15:14:46.133" rpa="false" schemaversion="3">
-<suite id="s1" name="Robot" source="C:\Project\robot_basic\robot.robot">
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20230406 14:26:53.408" rpa="false" schemaversion="3">
+<suite id="s1" name="Demo Web Playground" source="C:\Project\robot_basic\demo_web_playground.robot">
 <kw name="Open Website" library="keywords" type="SETUP">
 <arg>${URL_PLAYGROUND}</arg>
 <kw name="Create Webdriver" library="SeleniumLibrary">
 <arg>Chrome</arg>
 <arg>executable_path=${CHROME_DRIVER}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20230405 15:14:46.663" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20230405 15:14:46.663" endtime="20230405 15:14:47.926"/>
+<msg timestamp="20230406 14:26:53.949" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20230406 14:26:53.949" endtime="20230406 14:26:55.229"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230405 15:14:47.927" level="INFO">Opening url 'http://uitestingplayground.com/'</msg>
-<status status="PASS" starttime="20230405 15:14:47.926" endtime="20230405 15:14:49.837"/>
+<msg timestamp="20230406 14:26:55.230" level="INFO">Opening url 'http://uitestingplayground.com/'</msg>
+<status status="PASS" starttime="20230406 14:26:55.230" endtime="20230406 14:26:57.190"/>
 </kw>
-<status status="PASS" starttime="20230405 15:14:46.662" endtime="20230405 15:14:49.837"/>
+<status status="PASS" starttime="20230406 14:26:53.948" endtime="20230406 14:26:57.190"/>
 </kw>
-<test id="s1-t1" name="Click" line="18">
+<test id="s1-t1" name="TS001 - Dynamic ID" line="13">
+<kw name="Click Button" library="keywords">
+<arg>${Dynamic_ID_menu}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:26:57.193" endtime="20230406 14:26:57.238"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:26:57.239" level="INFO">Clicking element '//a[@href="/dynamicid"]'.</msg>
+<status status="PASS" starttime="20230406 14:26:57.239" endtime="20230406 14:26:57.915"/>
+</kw>
+<status status="PASS" starttime="20230406 14:26:57.192" endtime="20230406 14:26:57.915"/>
+</kw>
+<kw name="Click Button" library="keywords">
+<arg>${Dynamic_ID_btn}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:26:57.918" endtime="20230406 14:26:57.976"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:26:57.977" level="INFO">Clicking element '//button[contains(text(),'Button with Dynamic ID')]'.</msg>
+<status status="PASS" starttime="20230406 14:26:57.976" endtime="20230406 14:26:58.035"/>
+</kw>
+<status status="PASS" starttime="20230406 14:26:57.916" endtime="20230406 14:26:58.035"/>
+</kw>
+<kw name="Back to home" library="keywords" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${back to home}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:26:58.037" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:26:58.036" endtime="20230406 14:26:58.742"/>
+</kw>
+<status status="PASS" starttime="20230406 14:26:58.036" endtime="20230406 14:26:58.742"/>
+</kw>
+<status status="PASS" starttime="20230406 14:26:57.191" endtime="20230406 14:26:58.743"/>
+</test>
+<test id="s1-t2" name="TS002 - Class Attribute" line="17">
+<kw name="Click Button" library="keywords">
+<arg>${classatr_menu}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:26:58.747" endtime="20230406 14:26:58.789"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:26:58.791" level="INFO">Clicking element '//a[@href="/classattr"]'.</msg>
+<status status="PASS" starttime="20230406 14:26:58.790" endtime="20230406 14:26:59.450"/>
+</kw>
+<status status="PASS" starttime="20230406 14:26:58.747" endtime="20230406 14:26:59.451"/>
+</kw>
+<kw name="Click Button" library="keywords">
+<arg>${primary_btn}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:26:59.454" endtime="20230406 14:26:59.489"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:26:59.490" level="INFO">Clicking element '//button[contains(concat(' ', normalize-space(@class), ' '), ' btn-primary ')]'.</msg>
+<status status="PASS" starttime="20230406 14:26:59.489" endtime="20230406 14:26:59.548"/>
+</kw>
+<status status="PASS" starttime="20230406 14:26:59.453" endtime="20230406 14:26:59.548"/>
+</kw>
+<kw name="Handle Alert" library="SeleniumLibrary">
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20230406 14:26:59.549" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20230406 14:26:59.549" endtime="20230406 14:26:59.556"/>
+</kw>
+<kw name="Back to home" library="keywords" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${back to home}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:26:59.558" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:26:59.557" endtime="20230406 14:27:00.254"/>
+</kw>
+<status status="PASS" starttime="20230406 14:26:59.557" endtime="20230406 14:27:00.254"/>
+</kw>
+<status status="PASS" starttime="20230406 14:26:58.744" endtime="20230406 14:27:00.255"/>
+</test>
+<test id="s1-t3" name="TS003 - Hidden Layers" line="22">
+<kw name="Click Button" library="keywords">
+<arg>${hidden_layers_menu}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:00.258" endtime="20230406 14:27:00.296"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:00.297" level="INFO">Clicking element '//a[@href="/hiddenlayers"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:00.296" endtime="20230406 14:27:00.969"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:00.258" endtime="20230406 14:27:00.969"/>
+</kw>
+<kw name="Click Button" library="keywords">
+<arg>${hidden_layers_greenbtn}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:00.971" endtime="20230406 14:27:01.006"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:01.007" level="INFO">Clicking element '//button[@id="greenButton"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:01.006" endtime="20230406 14:27:01.065"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:00.970" endtime="20230406 14:27:01.066"/>
+</kw>
+<kw name="Click Button" library="keywords">
+<arg>${hidden_layers_bluebtn}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:01.067" endtime="20230406 14:27:01.102"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:01.103" level="INFO">Clicking element '//button[@id="blueButton"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:01.102" endtime="20230406 14:27:01.166"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:01.067" endtime="20230406 14:27:01.166"/>
+</kw>
+<kw name="Back to home" library="keywords" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${back to home}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:01.168" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:01.168" endtime="20230406 14:27:01.878"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:01.167" endtime="20230406 14:27:01.878"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:00.257" endtime="20230406 14:27:01.881"/>
+</test>
+<test id="s1-t4" name="TS004 - Load Delay" line="27">
+<kw name="Click Button" library="keywords">
+<arg>${load_delay_menu}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:01.890" endtime="20230406 14:27:01.928"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:01.929" level="INFO">Clicking element '//a[@href="/loaddelay"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:01.928" endtime="20230406 14:27:07.621"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:01.889" endtime="20230406 14:27:07.621"/>
+</kw>
+<kw name="Click Button" library="keywords">
+<arg>${load_delay_btn}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:07.623" endtime="20230406 14:27:07.668"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:07.669" level="INFO">Clicking element '//button[contains(text(),'Button Appearing After Delay')]'.</msg>
+<status status="PASS" starttime="20230406 14:27:07.669" endtime="20230406 14:27:07.729"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:07.622" endtime="20230406 14:27:07.729"/>
+</kw>
+<kw name="Back to home" library="keywords" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${back to home}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:07.731" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:07.730" endtime="20230406 14:27:08.380"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:07.730" endtime="20230406 14:27:08.381"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:01.887" endtime="20230406 14:27:08.381"/>
+</test>
+<test id="s1-t5" name="TS005 - AJAX Data" line="31">
+<kw name="Click Button" library="keywords">
+<arg>${ajax_menu}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:08.386" endtime="20230406 14:27:08.426"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:08.427" level="INFO">Clicking element '//a[@href="/ajax"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:08.427" endtime="20230406 14:27:09.154"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:08.386" endtime="20230406 14:27:09.154"/>
+</kw>
+<kw name="Click Button" library="keywords">
+<arg>${ajax_btn}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:09.156" endtime="20230406 14:27:09.186"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:09.187" level="INFO">Clicking element '//button[@id="ajaxButton"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:09.186" endtime="20230406 14:27:09.248"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:09.156" endtime="20230406 14:27:09.248"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230406 14:27:11.260" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230406 14:27:09.249" endtime="20230406 14:27:11.260"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Data loaded with AJAX get request.</arg>
+<arg>timeout=15</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230406 14:27:11.260" endtime="20230406 14:27:24.617"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${loaded_txt}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:24.617" level="INFO">Clicking element '//p[contains(text(),'Data loaded with AJAX get request.')]'.</msg>
+<status status="PASS" starttime="20230406 14:27:24.617" endtime="20230406 14:27:24.678"/>
+</kw>
+<kw name="Back to home" library="keywords" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${back to home}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:24.681" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:24.680" endtime="20230406 14:27:25.465"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:24.680" endtime="20230406 14:27:25.465"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:08.384" endtime="20230406 14:27:25.466"/>
+</test>
+<test id="s1-t6" name="TS006 - Client Side Delay" line="38">
+<kw name="Click Button" library="keywords">
+<arg>${client_delay_menu}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:25.471" endtime="20230406 14:27:25.533"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:25.534" level="INFO">Clicking element '//a[@href="/clientdelay"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:25.533" endtime="20230406 14:27:26.258"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:25.470" endtime="20230406 14:27:26.260"/>
+</kw>
+<kw name="Click Button" library="keywords">
+<arg>${client_delay_btn}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:26.261" endtime="20230406 14:27:26.291"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:26.293" level="INFO">Clicking element '//button[@id="ajaxButton"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:26.293" endtime="20230406 14:27:26.349"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:26.260" endtime="20230406 14:27:26.351"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Data calculated on the client side</arg>
+<arg>timeout=10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230406 14:27:26.351" endtime="20230406 14:27:26.372"/>
+</kw>
+<kw name="Back to home" library="keywords" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${back to home}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:26.374" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:26.373" endtime="20230406 14:27:27.077"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:26.372" endtime="20230406 14:27:27.077"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:25.468" endtime="20230406 14:27:27.078"/>
+</test>
+<test id="s1-t7" name="TS007 - Click" line="43">
 <kw name="Click Button" library="keywords">
 <arg>${click_menu}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:14:49.841" endtime="20230405 15:14:49.892"/>
+<status status="PASS" starttime="20230406 14:27:27.083" endtime="20230406 14:27:27.131"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:14:49.893" level="INFO">Clicking element '//a[@href="/click"]'.</msg>
-<status status="PASS" starttime="20230405 15:14:49.892" endtime="20230405 15:14:50.573"/>
+<msg timestamp="20230406 14:27:27.132" level="INFO">Clicking element '//a[@href="/click"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:27.131" endtime="20230406 14:27:27.781"/>
 </kw>
-<status status="PASS" starttime="20230405 15:14:49.841" endtime="20230405 15:14:50.574"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:14:52.588" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:14:50.574" endtime="20230405 15:14:52.588"/>
+<status status="PASS" starttime="20230406 14:27:27.080" endtime="20230406 14:27:27.783"/>
 </kw>
 <kw name="Click Button" library="keywords">
 <arg>${click_btn}</arg>
@@ -47,49 +351,43 @@
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:14:52.590" endtime="20230405 15:14:52.635"/>
+<status status="PASS" starttime="20230406 14:27:27.784" endtime="20230406 14:27:27.818"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:14:52.636" level="INFO">Clicking element '//button[@id="badButton"]'.</msg>
-<status status="PASS" starttime="20230405 15:14:52.636" endtime="20230405 15:14:52.695"/>
+<msg timestamp="20230406 14:27:27.820" level="INFO">Clicking element '//button[@id="badButton"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:27.818" endtime="20230406 14:27:27.875"/>
 </kw>
-<status status="PASS" starttime="20230405 15:14:52.588" endtime="20230405 15:14:52.695"/>
+<status status="PASS" starttime="20230406 14:27:27.783" endtime="20230406 14:27:27.875"/>
 </kw>
 <kw name="Back to home" library="keywords" type="TEARDOWN">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${back to home}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:14:52.697" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:14:52.697" endtime="20230405 15:14:53.441"/>
+<msg timestamp="20230406 14:27:27.877" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:27.877" endtime="20230406 14:27:28.530"/>
 </kw>
-<status status="PASS" starttime="20230405 15:14:52.696" endtime="20230405 15:14:53.442"/>
+<status status="PASS" starttime="20230406 14:27:27.876" endtime="20230406 14:27:28.530"/>
 </kw>
-<status status="PASS" starttime="20230405 15:14:49.837" endtime="20230405 15:14:53.442"/>
+<status status="PASS" starttime="20230406 14:27:27.079" endtime="20230406 14:27:28.532"/>
 </test>
-<test id="s1-t2" name="Text Input" line="23">
+<test id="s1-t8" name="TS008 - Text Input" line="47">
 <kw name="Click Button" library="keywords">
 <arg>${text_menu}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:14:53.444" endtime="20230405 15:14:53.500"/>
+<status status="PASS" starttime="20230406 14:27:28.535" endtime="20230406 14:27:28.579"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:14:53.501" level="INFO">Clicking element '//a[@href="/textinput"]'.</msg>
-<status status="PASS" starttime="20230405 15:14:53.500" endtime="20230405 15:14:54.138"/>
+<msg timestamp="20230406 14:27:28.580" level="INFO">Clicking element '//a[@href="/textinput"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:28.579" endtime="20230406 14:27:29.233"/>
 </kw>
-<status status="PASS" starttime="20230405 15:14:53.444" endtime="20230405 15:14:54.138"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:14:56.150" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:14:54.139" endtime="20230405 15:14:56.150"/>
+<status status="PASS" starttime="20230406 14:27:28.535" endtime="20230406 14:27:29.233"/>
 </kw>
 <kw name="Provide Input" library="keywords">
 <arg>${text_field}</arg>
@@ -98,101 +396,233 @@
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:14:56.152" endtime="20230405 15:14:56.182"/>
+<status status="PASS" starttime="20230406 14:27:29.234" endtime="20230406 14:27:29.272"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>${txt}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230405 15:14:56.183" level="INFO">Typing text 'Hello' into text field '//input[@id="newButtonName"]'.</msg>
-<status status="PASS" starttime="20230405 15:14:56.182" endtime="20230405 15:14:56.296"/>
+<msg timestamp="20230406 14:27:29.273" level="INFO">Typing text 'Hello' into text field '//input[@id="newButtonName"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:29.272" endtime="20230406 14:27:29.390"/>
 </kw>
-<status status="PASS" starttime="20230405 15:14:56.151" endtime="20230405 15:14:56.297"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:14:58.299" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:14:56.297" endtime="20230405 15:14:58.299"/>
+<status status="PASS" starttime="20230406 14:27:29.234" endtime="20230406 14:27:29.391"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${text_field_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:14:58.301" level="INFO">Clicking element '//button[@id="updatingButton"]'.</msg>
-<status status="PASS" starttime="20230405 15:14:58.300" endtime="20230405 15:14:58.374"/>
+<msg timestamp="20230406 14:27:29.392" level="INFO">Clicking element '//button[@id="updatingButton"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:29.392" endtime="20230406 14:27:29.473"/>
 </kw>
 <kw name="Back to home" library="keywords" type="TEARDOWN">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${back to home}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:14:58.375" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:14:58.375" endtime="20230405 15:14:59.041"/>
+<msg timestamp="20230406 14:27:29.475" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:29.475" endtime="20230406 14:27:30.171"/>
 </kw>
-<status status="PASS" starttime="20230405 15:14:58.374" endtime="20230405 15:14:59.041"/>
+<status status="PASS" starttime="20230406 14:27:29.474" endtime="20230406 14:27:30.171"/>
 </kw>
-<status status="PASS" starttime="20230405 15:14:53.443" endtime="20230405 15:14:59.042"/>
+<status status="PASS" starttime="20230406 14:27:28.534" endtime="20230406 14:27:30.173"/>
 </test>
-<test id="s1-t3" name="Scrollbars" line="30">
+<test id="s1-t9" name="TS009 - Scrollbars" line="52">
 <kw name="Click Button" library="keywords">
 <arg>${scrollbars_menu}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:14:59.047" endtime="20230405 15:14:59.091"/>
+<status status="PASS" starttime="20230406 14:27:30.176" endtime="20230406 14:27:30.211"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:14:59.093" level="INFO">Clicking element '//a[@href="/scrollbars"]'.</msg>
-<status status="PASS" starttime="20230405 15:14:59.092" endtime="20230405 15:14:59.730"/>
+<msg timestamp="20230406 14:27:30.213" level="INFO">Clicking element '//a[@href="/scrollbars"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:30.212" endtime="20230406 14:27:30.972"/>
 </kw>
-<status status="PASS" starttime="20230405 15:14:59.046" endtime="20230405 15:14:59.730"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:15:01.740" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:14:59.731" endtime="20230405 15:15:01.741"/>
+<status status="PASS" starttime="20230406 14:27:30.176" endtime="20230406 14:27:30.972"/>
 </kw>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <arg>${hidding_btn}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20230405 15:15:01.742" endtime="20230405 15:15:02.039"/>
+<status status="PASS" starttime="20230406 14:27:30.972" endtime="20230406 14:27:31.443"/>
 </kw>
 <kw name="Back to home" library="keywords" type="TEARDOWN">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${back to home}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:02.041" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:02.040" endtime="20230405 15:15:02.764"/>
+<msg timestamp="20230406 14:27:31.445" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:31.444" endtime="20230406 14:27:32.110"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:02.040" endtime="20230405 15:15:02.765"/>
+<status status="PASS" starttime="20230406 14:27:31.444" endtime="20230406 14:27:32.110"/>
 </kw>
-<status status="PASS" starttime="20230405 15:14:59.045" endtime="20230405 15:15:02.765"/>
+<status status="PASS" starttime="20230406 14:27:30.175" endtime="20230406 14:27:32.112"/>
 </test>
-<test id="s1-t4" name="Sample App Login" line="35">
+<test id="s1-t10" name="TS010 - Verify Text" line="56">
+<kw name="Click Button" library="keywords">
+<arg>${verify_text_menu}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:32.115" endtime="20230406 14:27:32.158"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:32.159" level="INFO">Clicking element '//a[@href="/verifytext"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:32.158" endtime="20230406 14:27:32.916"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:32.114" endtime="20230406 14:27:32.916"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${verify_text}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230406 14:27:32.918" endtime="20230406 14:27:32.937"/>
+</kw>
+<kw name="Back to home" library="keywords" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${back to home}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:32.941" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:32.939" endtime="20230406 14:27:33.641"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:32.938" endtime="20230406 14:27:33.641"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:32.113" endtime="20230406 14:27:33.642"/>
+</test>
+<test id="s1-t11" name="TS011 - Progress Bar" line="60">
+<kw name="Click Button" library="keywords">
+<arg>${progress_bar_menu}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:33.646" endtime="20230406 14:27:33.688"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:33.689" level="INFO">Clicking element '//a[@href="/progressbar"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:33.688" endtime="20230406 14:27:34.354"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:33.645" endtime="20230406 14:27:34.355"/>
+</kw>
+<kw name="Click Button" library="keywords">
+<arg>${progress_start_btn}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:34.357" endtime="20230406 14:27:34.393"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:34.394" level="INFO">Clicking element '//button[@id="startButton"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:34.393" endtime="20230406 14:27:34.455"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:34.356" endtime="20230406 14:27:34.456"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230406 14:27:36.460" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230406 14:27:34.456" endtime="20230406 14:27:36.460"/>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>//div[@id="progressBar"]</arg>
+<arg>75%</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20230406 14:27:36.460" endtime="20230406 14:27:46.920"/>
+</kw>
+<kw name="Click Button" library="keywords">
+<arg>${progress_stop_btn}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:46.922" endtime="20230406 14:27:46.954"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:46.955" level="INFO">Clicking element '//button[@id="stopButton"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:46.954" endtime="20230406 14:27:47.010"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:46.920" endtime="20230406 14:27:47.011"/>
+</kw>
+<kw name="Back to home" library="keywords" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${back to home}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:47.012" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:47.012" endtime="20230406 14:27:47.696"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:47.011" endtime="20230406 14:27:47.697"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:33.644" endtime="20230406 14:27:47.697"/>
+</test>
+<test id="s1-t12" name="TS012 - Visibility" line="67">
+<kw name="Click Button" library="keywords">
+<arg>${visibility_menu}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:47.707" endtime="20230406 14:27:47.750"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:47.752" level="INFO">Clicking element '//a[@href="/visibility"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:47.751" endtime="20230406 14:27:48.483"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:47.706" endtime="20230406 14:27:48.484"/>
+</kw>
+<kw name="Click Button" library="keywords">
+<arg>${hide_btn}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230406 14:27:48.486" endtime="20230406 14:27:48.519"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:48.520" level="INFO">Clicking element '//button[@id="hideButton"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:48.520" endtime="20230406 14:27:48.584"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:48.485" endtime="20230406 14:27:48.584"/>
+</kw>
+<kw name="Back to home" library="keywords" type="TEARDOWN">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${back to home}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230406 14:27:48.587" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:48.586" endtime="20230406 14:27:49.307"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:48.586" endtime="20230406 14:27:49.307"/>
+</kw>
+<status status="PASS" starttime="20230406 14:27:47.700" endtime="20230406 14:27:49.308"/>
+</test>
+<test id="s1-t13" name="TS013 - Sample App Login" line="71">
 <kw name="Click Button" library="keywords">
 <arg>${sample_login_menu}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:02.770" endtime="20230405 15:15:02.824"/>
+<status status="PASS" starttime="20230406 14:27:49.311" endtime="20230406 14:27:49.356"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:02.826" level="INFO">Clicking element '//a[@href="/sampleapp"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:02.826" endtime="20230405 15:15:03.526"/>
+<msg timestamp="20230406 14:27:49.357" level="INFO">Clicking element '//a[@href="/sampleapp"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:49.357" endtime="20230406 14:27:50.015"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:02.769" endtime="20230405 15:15:03.526"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:15:05.534" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:15:03.527" endtime="20230405 15:15:05.535"/>
+<status status="PASS" starttime="20230406 14:27:49.311" endtime="20230406 14:27:50.015"/>
 </kw>
 <kw name="Provide Input" library="keywords">
 <arg>${sample_login_user}</arg>
@@ -201,22 +631,16 @@
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:05.536" endtime="20230405 15:15:05.569"/>
+<status status="PASS" starttime="20230406 14:27:50.016" endtime="20230406 14:27:50.052"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>${txt}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:05.569" level="INFO">Typing text 'abc' into text field '//input[@name="UserName"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:05.569" endtime="20230405 15:15:05.687"/>
+<msg timestamp="20230406 14:27:50.053" level="INFO">Typing text 'abc' into text field '//input[@name="UserName"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:50.052" endtime="20230406 14:27:50.166"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:05.535" endtime="20230405 15:15:05.688"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:15:07.700" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:15:05.688" endtime="20230405 15:15:07.700"/>
+<status status="PASS" starttime="20230406 14:27:50.016" endtime="20230406 14:27:50.166"/>
 </kw>
 <kw name="Provide Input" library="keywords">
 <arg>${sample_login_pass}</arg>
@@ -225,22 +649,16 @@
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:07.703" endtime="20230405 15:15:07.740"/>
+<status status="PASS" starttime="20230406 14:27:50.168" endtime="20230406 14:27:50.204"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>${txt}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:07.741" level="INFO">Typing text 'pwd' into text field '//input[@name="Password"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:07.741" endtime="20230405 15:15:07.858"/>
+<msg timestamp="20230406 14:27:50.205" level="INFO">Typing text 'pwd' into text field '//input[@name="Password"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:50.204" endtime="20230406 14:27:50.316"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:07.702" endtime="20230405 15:15:07.859"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:15:09.863" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:15:07.861" endtime="20230405 15:15:09.863"/>
+<status status="PASS" starttime="20230406 14:27:50.167" endtime="20230406 14:27:50.318"/>
 </kw>
 <kw name="Click Button" library="keywords">
 <arg>${login_btn}</arg>
@@ -248,21 +666,21 @@
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:09.866" endtime="20230405 15:15:09.902"/>
+<status status="PASS" starttime="20230406 14:27:50.319" endtime="20230406 14:27:50.353"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:09.903" level="INFO">Clicking element '//button[@id="login"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:09.902" endtime="20230405 15:15:09.969"/>
+<msg timestamp="20230406 14:27:50.354" level="INFO">Clicking element '//button[@id="login"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:50.353" endtime="20230406 14:27:50.412"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:09.865" endtime="20230405 15:15:09.969"/>
+<status status="PASS" starttime="20230406 14:27:50.318" endtime="20230406 14:27:50.412"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:15:11.980" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:15:09.970" endtime="20230405 15:15:11.980"/>
+<msg timestamp="20230406 14:27:52.413" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230406 14:27:50.413" endtime="20230406 14:27:52.413"/>
 </kw>
 <kw name="Click Button" library="keywords">
 <arg>${login_btn}</arg>
@@ -270,43 +688,43 @@
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:11.985" endtime="20230405 15:15:12.009"/>
+<status status="PASS" starttime="20230406 14:27:52.415" endtime="20230406 14:27:52.436"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:12.009" level="INFO">Clicking element '//button[@id="login"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:12.009" endtime="20230405 15:15:12.062"/>
+<msg timestamp="20230406 14:27:52.437" level="INFO">Clicking element '//button[@id="login"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:52.437" endtime="20230406 14:27:52.482"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:11.984" endtime="20230405 15:15:12.062"/>
+<status status="PASS" starttime="20230406 14:27:52.413" endtime="20230406 14:27:52.482"/>
 </kw>
 <kw name="Back to home" library="keywords" type="TEARDOWN">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${back to home}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:12.064" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:12.064" endtime="20230405 15:15:12.747"/>
+<msg timestamp="20230406 14:27:52.484" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:52.484" endtime="20230406 14:27:53.144"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:12.063" endtime="20230405 15:15:12.748"/>
+<status status="PASS" starttime="20230406 14:27:52.483" endtime="20230406 14:27:53.144"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:02.767" endtime="20230405 15:15:12.748"/>
+<status status="PASS" starttime="20230406 14:27:49.310" endtime="20230406 14:27:53.144"/>
 </test>
-<test id="s1-t5" name="Mouse Over" line="46">
+<test id="s1-t14" name="TS014 - Mouse Over" line="79">
 <kw name="Click Button" library="keywords">
 <arg>${mouse_over_menu}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:12.753" endtime="20230405 15:15:12.794"/>
+<status status="PASS" starttime="20230406 14:27:53.148" endtime="20230406 14:27:53.197"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:12.795" level="INFO">Clicking element '//a[@href="/mouseover"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:12.795" endtime="20230405 15:15:13.446"/>
+<msg timestamp="20230406 14:27:53.197" level="INFO">Clicking element '//a[@href="/mouseover"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:53.197" endtime="20230406 14:27:53.934"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:12.752" endtime="20230405 15:15:13.446"/>
+<status status="PASS" starttime="20230406 14:27:53.147" endtime="20230406 14:27:53.934"/>
 </kw>
 <kw name="Click Button" library="keywords">
 <arg>${mouse_click_me}</arg>
@@ -314,352 +732,87 @@
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:13.448" endtime="20230405 15:15:13.492"/>
+<status status="PASS" starttime="20230406 14:27:53.937" endtime="20230406 14:27:53.968"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:13.493" level="INFO">Clicking element '//a[@title="Click me"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:13.492" endtime="20230405 15:15:13.550"/>
+<msg timestamp="20230406 14:27:53.969" level="INFO">Clicking element '//a[@title="Click me"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:53.968" endtime="20230406 14:27:54.023"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:13.447" endtime="20230405 15:15:13.551"/>
+<status status="PASS" starttime="20230406 14:27:53.936" endtime="20230406 14:27:54.024"/>
 </kw>
 <kw name="Back to home" library="keywords" type="TEARDOWN">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${back to home}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:13.553" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:13.552" endtime="20230405 15:15:14.192"/>
+<msg timestamp="20230406 14:27:54.026" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:54.025" endtime="20230406 14:27:54.684"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:13.551" endtime="20230405 15:15:14.193"/>
+<status status="PASS" starttime="20230406 14:27:54.025" endtime="20230406 14:27:54.684"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:12.750" endtime="20230405 15:15:14.193"/>
+<status status="PASS" starttime="20230406 14:27:53.146" endtime="20230406 14:27:54.686"/>
 </test>
-<test id="s1-t6" name="Load Delay" line="50">
+<test id="s1-t15" name="TS015 - Non-Breaking Space" line="83">
 <kw name="Click Button" library="keywords">
-<arg>${load_delay_menu}</arg>
+<arg>${nbsp_menu}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:14.197" endtime="20230405 15:15:14.242"/>
+<status status="PASS" starttime="20230406 14:27:54.691" endtime="20230406 14:27:54.727"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:14.242" level="INFO">Clicking element '//a[@href="/loaddelay"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:14.242" endtime="20230405 15:15:19.975"/>
+<msg timestamp="20230406 14:27:54.728" level="INFO">Clicking element '//a[@href="/nbsp"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:54.728" endtime="20230406 14:27:55.384"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:14.195" endtime="20230405 15:15:19.975"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:15:21.978" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:15:19.976" endtime="20230405 15:15:21.978"/>
+<status status="PASS" starttime="20230406 14:27:54.689" endtime="20230406 14:27:55.385"/>
 </kw>
 <kw name="Click Button" library="keywords">
-<arg>${load_delay_btn}</arg>
+<arg>//button[text()='My\u00A0Button']</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:21.981" endtime="20230405 15:15:22.015"/>
+<status status="PASS" starttime="20230406 14:27:55.386" endtime="20230406 14:27:55.430"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:22.016" level="INFO">Clicking element '//button[contains(text(),'Button Appearing After Delay')]'.</msg>
-<status status="PASS" starttime="20230405 15:15:22.016" endtime="20230405 15:15:22.089"/>
+<msg timestamp="20230406 14:27:55.431" level="INFO">Clicking element '//button[text()='My Button']'.</msg>
+<status status="PASS" starttime="20230406 14:27:55.430" endtime="20230406 14:27:55.488"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:21.979" endtime="20230405 15:15:22.089"/>
+<status status="PASS" starttime="20230406 14:27:55.385" endtime="20230406 14:27:55.488"/>
 </kw>
 <kw name="Back to home" library="keywords" type="TEARDOWN">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${back to home}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:22.092" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:22.092" endtime="20230405 15:15:22.831"/>
+<msg timestamp="20230406 14:27:55.490" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:55.490" endtime="20230406 14:27:56.142"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:22.090" endtime="20230405 15:15:22.832"/>
+<status status="PASS" starttime="20230406 14:27:55.489" endtime="20230406 14:27:56.143"/>
 </kw>
-<status status="PASS" starttime="20230405 15:15:14.195" endtime="20230405 15:15:22.832"/>
+<status status="PASS" starttime="20230406 14:27:54.688" endtime="20230406 14:27:56.143"/>
 </test>
-<test id="s1-t7" name="Dynamic ID" line="55">
-<kw name="Click Button" library="keywords">
-<arg>${Dynamic_ID_menu}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:22.836" endtime="20230405 15:15:22.876"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:22.877" level="INFO">Clicking element '//a[@href="/dynamicid"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:22.876" endtime="20230405 15:15:23.533"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:22.835" endtime="20230405 15:15:23.534"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:15:25.536" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:15:23.534" endtime="20230405 15:15:25.536"/>
-</kw>
-<kw name="Click Button" library="keywords">
-<arg>${Dynamic_ID_btn}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:25.539" endtime="20230405 15:15:25.577"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:25.578" level="INFO">Clicking element '//button[contains(text(),'Button with Dynamic ID')]'.</msg>
-<status status="PASS" starttime="20230405 15:15:25.578" endtime="20230405 15:15:25.636"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:25.538" endtime="20230405 15:15:25.637"/>
-</kw>
-<kw name="Back to home" library="keywords" type="TEARDOWN">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${back to home}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:25.639" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:25.638" endtime="20230405 15:15:26.324"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:25.637" endtime="20230405 15:15:26.325"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:22.834" endtime="20230405 15:15:26.325"/>
-</test>
-<test id="s1-t8" name="Class Attribute" line="60">
-<kw name="Click Button" library="keywords">
-<arg>${classatr_menu}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:26.329" endtime="20230405 15:15:26.379"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:26.380" level="INFO">Clicking element '//a[@href="/classattr"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:26.379" endtime="20230405 15:15:27.061"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:26.328" endtime="20230405 15:15:27.062"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:15:29.070" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:15:27.063" endtime="20230405 15:15:29.070"/>
-</kw>
-<kw name="Click Button" library="keywords">
-<arg>${primary_btn}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:29.073" endtime="20230405 15:15:29.109"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:29.110" level="INFO">Clicking element '//button[contains(concat(' ', normalize-space(@class), ' '), ' btn-primary ')]'.</msg>
-<status status="PASS" starttime="20230405 15:15:29.110" endtime="20230405 15:15:29.170"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:29.072" endtime="20230405 15:15:29.170"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:15:31.185" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:15:29.171" endtime="20230405 15:15:31.185"/>
-</kw>
-<kw name="Handle Alert" library="SeleniumLibrary">
-<arg>action=ACCEPT</arg>
-<doc>Handles the current alert and returns its message.</doc>
-<msg timestamp="20230405 15:15:31.187" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<status status="PASS" starttime="20230405 15:15:31.187" endtime="20230405 15:15:31.195"/>
-</kw>
-<kw name="Back to home" library="keywords" type="TEARDOWN">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${back to home}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:31.197" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:31.196" endtime="20230405 15:15:31.983"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:31.195" endtime="20230405 15:15:31.983"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:26.326" endtime="20230405 15:15:31.984"/>
-</test>
-<test id="s1-t9" name="Progress Bar" line="67">
-<kw name="Click Button" library="keywords">
-<arg>${progress_bar_menu}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:31.990" endtime="20230405 15:15:32.040"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:32.041" level="INFO">Clicking element '//a[@href="/progressbar"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:32.040" endtime="20230405 15:15:32.681"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:31.988" endtime="20230405 15:15:32.681"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:15:34.685" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:15:32.682" endtime="20230405 15:15:34.685"/>
-</kw>
-<kw name="Click Button" library="keywords">
-<arg>${progress_start_btn}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:34.687" endtime="20230405 15:15:34.717"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:34.718" level="INFO">Clicking element '//button[@id="startButton"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:34.718" endtime="20230405 15:15:34.774"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:34.686" endtime="20230405 15:15:34.774"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:15:36.777" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:15:34.774" endtime="20230405 15:15:36.777"/>
-</kw>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<arg>//div[@id="progressBar"]</arg>
-<arg>75%</arg>
-<arg>timeout=20</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" starttime="20230405 15:15:36.779" endtime="20230405 15:15:54.979"/>
-</kw>
-<kw name="Click Button" library="keywords">
-<arg>${progress_stop_btn}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:54.981" endtime="20230405 15:15:55.016"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:55.017" level="INFO">Clicking element '//button[@id="stopButton"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:55.017" endtime="20230405 15:15:55.079"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:54.980" endtime="20230405 15:15:55.079"/>
-</kw>
-<kw name="Back to home" library="keywords" type="TEARDOWN">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${back to home}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:55.082" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:55.082" endtime="20230405 15:15:55.745"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:55.081" endtime="20230405 15:15:55.745"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:31.987" endtime="20230405 15:15:55.747"/>
-</test>
-<test id="s1-t10" name="Client Side Delay" line="75">
-<kw name="Click Button" library="keywords">
-<arg>${client_delay_menu}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:55.750" endtime="20230405 15:15:55.790"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:55.791" level="INFO">Clicking element '//a[@href="/clientdelay"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:55.790" endtime="20230405 15:15:56.547"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:55.749" endtime="20230405 15:15:56.547"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:15:58.558" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:15:56.547" endtime="20230405 15:15:58.558"/>
-</kw>
-<kw name="Click Button" library="keywords">
-<arg>${client_delay_btn}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:15:58.559" endtime="20230405 15:15:58.596"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:15:58.597" level="INFO">Clicking element '//button[@id="ajaxButton"]'.</msg>
-<status status="PASS" starttime="20230405 15:15:58.596" endtime="20230405 15:15:58.658"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:58.559" endtime="20230405 15:15:58.659"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:16:00.669" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:15:58.660" endtime="20230405 15:16:00.670"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Data calculated on the client side</arg>
-<arg>timeout=10</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20230405 15:16:00.671" endtime="20230405 15:16:00.692"/>
-</kw>
-<kw name="Back to home" library="keywords" type="TEARDOWN">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${back to home}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:00.694" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:00.694" endtime="20230405 15:16:01.359"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:00.693" endtime="20230405 15:16:01.361"/>
-</kw>
-<status status="PASS" starttime="20230405 15:15:55.748" endtime="20230405 15:16:01.361"/>
-</test>
-<test id="s1-t11" name="Overlapped Element" line="82">
+<test id="s1-t16" name="TS016 - Overlapped Element" line="87">
 <kw name="Click Button" library="keywords">
 <arg>${overlap_element_menu}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:16:01.365" endtime="20230405 15:16:01.406"/>
+<status status="PASS" starttime="20230406 14:27:56.147" endtime="20230406 14:27:56.187"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:01.407" level="INFO">Clicking element '//a[@href="/overlapped"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:01.407" endtime="20230405 15:16:02.045"/>
+<msg timestamp="20230406 14:27:56.188" level="INFO">Clicking element '//a[@href="/overlapped"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:56.188" endtime="20230406 14:27:56.844"/>
 </kw>
-<status status="PASS" starttime="20230405 15:16:01.363" endtime="20230405 15:16:02.047"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:16:04.059" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:16:02.047" endtime="20230405 15:16:04.059"/>
+<status status="PASS" starttime="20230406 14:27:56.146" endtime="20230406 14:27:56.844"/>
 </kw>
 <kw name="Provide Input" library="keywords">
 <arg>${id_input}</arg>
@@ -668,33 +821,21 @@
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:16:04.061" endtime="20230405 15:16:04.099"/>
+<status status="PASS" starttime="20230406 14:27:56.845" endtime="20230406 14:27:56.881"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>${txt}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:04.100" level="INFO">Typing text '0898' into text field '//input[@id="id"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:04.100" endtime="20230405 15:16:04.223"/>
+<msg timestamp="20230406 14:27:56.882" level="INFO">Typing text '0898' into text field '//input[@id="id"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:56.881" endtime="20230406 14:27:57.006"/>
 </kw>
-<status status="PASS" starttime="20230405 15:16:04.060" endtime="20230405 15:16:04.224"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:16:06.230" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:16:04.225" endtime="20230405 15:16:06.230"/>
+<status status="PASS" starttime="20230406 14:27:56.844" endtime="20230406 14:27:57.006"/>
 </kw>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <arg>${name_input}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20230405 15:16:06.231" endtime="20230405 15:16:06.526"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:16:08.537" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:16:06.527" endtime="20230405 15:16:08.537"/>
+<status status="PASS" starttime="20230406 14:27:57.007" endtime="20230406 14:27:57.328"/>
 </kw>
 <kw name="Provide Input" library="keywords">
 <arg>${name_input}</arg>
@@ -703,300 +844,33 @@
 <arg>${locator}</arg>
 <arg>timeout=5</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:16:08.539" endtime="20230405 15:16:08.565"/>
+<status status="PASS" starttime="20230406 14:27:57.329" endtime="20230406 14:27:57.352"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>${txt}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:08.567" level="INFO">Typing text 'Thun' into text field '//input[@id="name"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:08.566" endtime="20230405 15:16:08.693"/>
+<msg timestamp="20230406 14:27:57.354" level="INFO">Typing text 'Thun' into text field '//input[@id="name"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:57.353" endtime="20230406 14:27:57.466"/>
 </kw>
-<status status="PASS" starttime="20230405 15:16:08.538" endtime="20230405 15:16:08.694"/>
-</kw>
-<kw name="Back to home" library="keywords" type="TEARDOWN">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${back to home}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:08.697" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:08.696" endtime="20230405 15:16:09.394"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:08.694" endtime="20230405 15:16:09.394"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:01.363" endtime="20230405 15:16:09.395"/>
-</test>
-<test id="s1-t12" name="Non-Breaking Space" line="91">
-<kw name="Click Button" library="keywords">
-<arg>${nbsp_menu}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:16:09.398" endtime="20230405 15:16:09.435"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:09.436" level="INFO">Clicking element '//a[@href="/nbsp"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:09.435" endtime="20230405 15:16:10.172"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:09.398" endtime="20230405 15:16:10.172"/>
-</kw>
-<kw name="Click Button" library="keywords">
-<arg>//button[text()='My\u00A0Button']</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:16:10.174" endtime="20230405 15:16:10.209"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:10.209" level="INFO">Clicking element '//button[text()='My Button']'.</msg>
-<status status="PASS" starttime="20230405 15:16:10.209" endtime="20230405 15:16:10.264"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:10.173" endtime="20230405 15:16:10.264"/>
+<status status="PASS" starttime="20230406 14:27:57.328" endtime="20230406 14:27:57.466"/>
 </kw>
 <kw name="Back to home" library="keywords" type="TEARDOWN">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${back to home}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:10.266" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:10.265" endtime="20230405 15:16:10.909"/>
+<msg timestamp="20230406 14:27:57.468" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
+<status status="PASS" starttime="20230406 14:27:57.467" endtime="20230406 14:27:58.143"/>
 </kw>
-<status status="PASS" starttime="20230405 15:16:10.265" endtime="20230405 15:16:10.909"/>
+<status status="PASS" starttime="20230406 14:27:57.467" endtime="20230406 14:27:58.143"/>
 </kw>
-<status status="PASS" starttime="20230405 15:16:09.397" endtime="20230405 15:16:10.911"/>
-</test>
-<test id="s1-t13" name="Visibility" line="95">
-<kw name="Click Button" library="keywords">
-<arg>${visibility_menu}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:16:10.914" endtime="20230405 15:16:10.950"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:10.952" level="INFO">Clicking element '//a[@href="/visibility"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:10.951" endtime="20230405 15:16:11.684"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:10.913" endtime="20230405 15:16:11.684"/>
-</kw>
-<kw name="Click Button" library="keywords">
-<arg>${hide_btn}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:16:11.686" endtime="20230405 15:16:11.722"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:11.723" level="INFO">Clicking element '//button[@id="hideButton"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:11.723" endtime="20230405 15:16:11.782"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:11.685" endtime="20230405 15:16:11.782"/>
-</kw>
-<kw name="Back to home" library="keywords" type="TEARDOWN">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${back to home}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:11.783" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:11.783" endtime="20230405 15:16:12.528"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:11.783" endtime="20230405 15:16:12.528"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:10.912" endtime="20230405 15:16:12.528"/>
-</test>
-<test id="s1-t14" name="Verify Text" line="99">
-<kw name="Click Button" library="keywords">
-<arg>${verify_text_menu}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:16:12.533" endtime="20230405 15:16:12.568"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:12.568" level="INFO">Clicking element '//a[@href="/verifytext"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:12.568" endtime="20230405 15:16:13.200"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:12.531" endtime="20230405 15:16:13.200"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>${verify_text}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20230405 15:16:13.201" endtime="20230405 15:16:13.219"/>
-</kw>
-<kw name="Back to home" library="keywords" type="TEARDOWN">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${back to home}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:13.222" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:13.221" endtime="20230405 15:16:13.926"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:13.220" endtime="20230405 15:16:13.926"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:12.530" endtime="20230405 15:16:13.926"/>
-</test>
-<test id="s1-t15" name="Hidden Layers" line="103">
-<kw name="Click Button" library="keywords">
-<arg>${hidden_layers_menu}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:16:13.929" endtime="20230405 15:16:13.966"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:13.967" level="INFO">Clicking element '//a[@href="/hiddenlayers"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:13.966" endtime="20230405 15:16:14.649"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:13.929" endtime="20230405 15:16:14.649"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:16:16.662" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:16:14.650" endtime="20230405 15:16:16.662"/>
-</kw>
-<kw name="Click Button" library="keywords">
-<arg>${hidden_layers_greenbtn}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:16:16.664" endtime="20230405 15:16:16.703"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:16.704" level="INFO">Clicking element '//button[@id="greenButton"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:16.704" endtime="20230405 15:16:16.772"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:16.664" endtime="20230405 15:16:16.772"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:16:18.784" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:16:16.773" endtime="20230405 15:16:18.784"/>
-</kw>
-<kw name="Click Button" library="keywords">
-<arg>${hidden_layers_bluebtn}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:16:18.785" endtime="20230405 15:16:18.814"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:18.815" level="INFO">Clicking element '//button[@id="blueButton"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:18.815" endtime="20230405 15:16:18.870"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:18.784" endtime="20230405 15:16:18.870"/>
-</kw>
-<kw name="Back to home" library="keywords" type="TEARDOWN">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${back to home}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:18.872" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:18.872" endtime="20230405 15:16:19.565"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:18.870" endtime="20230405 15:16:19.565"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:13.928" endtime="20230405 15:16:19.566"/>
-</test>
-<test id="s1-t16" name="AJAX Data" line="110">
-<kw name="Click Button" library="keywords">
-<arg>${ajax_menu}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:16:19.569" endtime="20230405 15:16:19.606"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:19.607" level="INFO">Clicking element '//a[@href="/ajax"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:19.606" endtime="20230405 15:16:20.245"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:19.568" endtime="20230405 15:16:20.245"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:16:22.259" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:16:20.245" endtime="20230405 15:16:22.259"/>
-</kw>
-<kw name="Click Button" library="keywords">
-<arg>${ajax_btn}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=5</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230405 15:16:22.261" endtime="20230405 15:16:22.297"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:22.297" level="INFO">Clicking element '//button[@id="ajaxButton"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:22.297" endtime="20230405 15:16:22.366"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:22.260" endtime="20230405 15:16:22.366"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:16:24.383" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:16:22.368" endtime="20230405 15:16:24.384"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Data loaded with AJAX get request.</arg>
-<arg>timeout=15</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20230405 15:16:24.387" endtime="20230405 15:16:37.715"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230405 15:16:39.732" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230405 15:16:37.717" endtime="20230405 15:16:39.732"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${loaded_txt}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:39.734" level="INFO">Clicking element '//p[contains(text(),'Data loaded with AJAX get request.')]'.</msg>
-<status status="PASS" starttime="20230405 15:16:39.733" endtime="20230405 15:16:39.798"/>
-</kw>
-<kw name="Back to home" library="keywords" type="TEARDOWN">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${back to home}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230405 15:16:39.801" level="INFO">Clicking element '//a[@href="/home"]'.</msg>
-<status status="PASS" starttime="20230405 15:16:39.799" endtime="20230405 15:16:40.475"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:39.799" endtime="20230405 15:16:40.477"/>
-</kw>
-<status status="PASS" starttime="20230405 15:16:19.567" endtime="20230405 15:16:40.477"/>
+<status status="PASS" starttime="20230406 14:27:56.145" endtime="20230406 14:27:58.143"/>
 </test>
 <kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20230405 15:16:40.480" endtime="20230405 15:16:46.947"/>
+<status status="PASS" starttime="20230406 14:27:58.146" endtime="20230406 14:28:04.580"/>
 </kw>
-<status status="PASS" starttime="20230405 15:14:46.137" endtime="20230405 15:16:46.947"/>
+<status status="PASS" starttime="20230406 14:26:53.413" endtime="20230406 14:28:04.580"/>
 </suite>
 <statistics>
 <total>
@@ -1005,7 +879,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="16" fail="0" skip="0" id="s1" name="Robot">Robot</stat>
+<stat pass="16" fail="0" skip="0" id="s1" name="Demo Web Playground">Demo Web Playground</stat>
 </suite>
 </statistics>
 <errors>
