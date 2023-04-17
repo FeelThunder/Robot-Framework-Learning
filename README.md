@@ -6,6 +6,14 @@ The purpose of this learning is
 * Practice to use test automation tool (Robot Framework).
 * To learn UI test automation techniques.
 
+## Command Used
+* python -m robot demo_web_playground.robot
+* git add .
+* git status
+* git commit -m "First Commit"
+* git branch -M main 
+* git push -u origin main
+
 ## Content 
 For UI Test Automation Playground website I've learn many exercise such as
 * Dynamic ID
